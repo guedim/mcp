@@ -108,8 +108,7 @@ En lugar de clonar el repositorio, utilizaremos `uv` para instalar el servidor d
 
 ```bash
 # Instalamos la herramienta directamente apuntando al subdirectorio del repositorio
-uv tool install "git+[https://github.com/guedim/mcp.git#subdirectory=clase10/github-mcp-server](https://github.com/guedim/mcp.git#subdirectory=clase10/github-mcp-server)" --force
-
+uv tool install "mcp-calculator-server @ git+https://github.com/guedim/mcp.git#subdirectory=clase10/github-mcp-server" --force
 ```
 
 > **¿Qué hace este comando?** Descarga el código, instala las dependencias (`mcp`, `fastmcp`), compila el proyecto y crea un ejecutable binario llamado `mcp-calc` accesible desde cualquier terminal.
