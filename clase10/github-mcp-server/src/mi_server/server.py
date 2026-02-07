@@ -1,9 +1,6 @@
-from starlette.applications import Starlette
-from starlette.routing import Mount, Host
-from mcp.server.fastmcp import FastMCP
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("My App SSE")
+mcp = FastMCP("calculadora PRO")
 
 
 @mcp.tool(
@@ -48,3 +45,6 @@ def divide(a: float, b:float) -> float:
     return a/b
 
 
+if __name__ == "__main__":
+    # Esto inicia el servidor en modo STDIO por defecto
+    mcp.run()
