@@ -43,9 +43,10 @@ source venv/bin/activate
 ```
 
 
-3. **Instalar el paquete:**
+3. **Instalar los paquetes:**
 ```bash
 pip install "mcp[cli]"
+pip install azure-ai-inference
 ```
 
 ---

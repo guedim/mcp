@@ -67,7 +67,7 @@ def call_llm(prompt, functions):
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt},
         ],
-        
+
     )
 
     response_message = response.choices[0].message
