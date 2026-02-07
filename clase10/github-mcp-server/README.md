@@ -70,3 +70,71 @@ npx @modelcontextprotocol/inspector ./venv/bin/python ./src/mi_server/server.py
 Una vez ejecutado, abre [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) en tu navegador para interactuar con el servidor.
 
 ---
+
+# 🚀 Guía de Instalación y Ejecución Remota  (Global Installation)
+
+
+Este proyecto implementa un servidor de **Model Context Protocol (MCP)** desarrollado en Python. Permite a los modelos de lenguaje (LLMs), como Claude, realizar operaciones matemáticas básicas mediante una interfaz estandarizada y segura.
+
+El servidor está configurado para ser instalado como una herramienta global de sistema, facilitando su uso en diferentes clientes sin necesidad de gestionar entornos virtuales manualmente cada vez.
+
+---
+
+## 🛠️ Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado **UV**, el gestor de paquetes de Python de alto rendimiento:
+
+- **macOS/Linux:**
+  ```bash
+  curl -LsSf [https://astral.sh/uv/install.sh](https://astral.sh/uv/install.sh) | sh
+
+```
+
+* **Windows:**
+```powershell
+powershell -c "irm [https://astral.sh/uv/install.ps1](https://astral.sh/uv/install.ps1) | iex"
+
+```
+
+
+
+---
+
+## 🚀 Instalación y Despliegue
+
+### 1. Instalación Global del Servidor
+
+En lugar de clonar el repositorio, utilizaremos `uv` para instalar el servidor directamente desde GitHub. Esto registrará el comando `mcp-calc` en tu sistema.
+
+```bash
+# Instalamos la herramienta directamente apuntando al subdirectorio del repositorio
+uv tool install "git+[https://github.com/guedim/mcp.git#subdirectory=clase10/github-mcp-server](https://github.com/guedim/mcp.git#subdirectory=clase10/github-mcp-server)" --force
+
+```
+
+> **¿Qué hace este comando?** Descarga el código, instala las dependencias (`mcp`, `fastmcp`), compila el proyecto y crea un ejecutable binario llamado `mcp-calc` accesible desde cualquier terminal.
+
+### 2. Verificación con MCP Inspector
+
+Para asegurarte de que el servidor responde correctamente al protocolo JSON-RPC, utiliza el inspector oficial:
+
+```bash
+npx @modelcontextprotocol/inspector mcp-calc
+
+```
+
+Al ejecutarlo, se abrirá una interfaz web en [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) donde podrás probar las herramientas `add`, `substract`, `multiply` y `divide`.
+
+---
+
+
+## 🔄 Actualización
+
+Si el repositorio recibe actualizaciones, simplemente vuelve a ejecutar el comando de instalación con el flag `--force`:
+
+```bash
+uv tool install "git+[https://github.com/guedim/mcp.git#subdirectory=clase10/github-mcp-server](https://github.com/guedim/mcp.git#subdirectory=clase10/github-mcp-server)" --force
+
+```
+
+---
