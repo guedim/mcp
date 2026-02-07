@@ -44,7 +44,8 @@ def divide(a: float, b:float) -> float:
     
     return a/b
 
+def main():
+    mcp.run()
 
 if __name__ == "__main__":
-    # Esto inicia el servidor en modo STDIO por defecto
-    mcp.run()
+    main()
